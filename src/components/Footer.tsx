@@ -1,12 +1,28 @@
 
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Truck } from "lucide-react";
+import GoogleMap from "./GoogleMap";
 
 const Footer = () => {
+  const deliveryLocations = ["Kanpur", "Lucknow", "Unnao", "Kanpur Dehat", "Mahoba", "Hamirpur"];
+  
+  const officeAddresses = [
+    {
+      name: "Kanpur Office",
+      address: "Yogendra Vihar, Kanpur 208021",
+      fullAddress: "Yogendra Vihar, Kanpur 208021, Uttar Pradesh, India"
+    },
+    {
+      name: "Hamirpur Office",
+      address: "Hamirpur, UP 210301",
+      fullAddress: "Hamirpur, UP 210301, Uttar Pradesh, India"
+    }
+  ];
+
   return (
     <footer className="bg-buniyaad-dark text-white">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
             <Link to="/" className="flex items-center mb-4">
@@ -17,7 +33,7 @@ const Footer = () => {
               />
             </Link>
             <p className="mb-4 text-gray-300">
-              Buniyaad is your trusted partner for all construction material needs. Building dreams together.
+              Buniyaad is your trusted partner for all construction material needs. Building dreams together since 2022.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-300 hover:text-buniyaad-orange">
@@ -60,6 +76,15 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
+            
+            <h3 className="text-lg font-semibold mb-4 mt-6 border-b border-gray-600 pb-2">Delivery Locations</h3>
+            <div className="flex flex-wrap gap-2">
+              {deliveryLocations.map(location => (
+                <span key={location} className="bg-buniyaad-dark/50 text-gray-300 px-2 py-1 rounded text-xs flex items-center">
+                  <Truck className="h-3 w-3 mr-1" /> {location}
+                </span>
+              ))}
+            </div>
           </div>
 
           {/* Products */}
@@ -87,22 +112,13 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 border-b border-gray-600 pb-2">Contact Us</h3>
+            
+            <h3 className="text-lg font-semibold mb-4 mt-6 border-b border-gray-600 pb-2">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex">
-                <MapPin className="mr-2 h-5 w-5 text-buniyaad-orange" />
-                <span className="text-gray-300">
-                  123 Construction Street, Building City, 400001
-                </span>
-              </li>
-              <li className="flex">
                 <Phone className="mr-2 h-5 w-5 text-buniyaad-orange" />
-                <a href="tel:+919876543210" className="text-gray-300 hover:text-buniyaad-orange">
-                  +91 9876543210
+                <a href="tel:+917651853974" className="text-gray-300 hover:text-buniyaad-orange">
+                  +91 7651853974
                 </a>
               </li>
               <li className="flex">
@@ -112,6 +128,25 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
+          </div>
+
+          {/* Office Addresses with Maps */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4 border-b border-gray-600 pb-2">Our Offices</h3>
+            <div className="space-y-6">
+              {officeAddresses.map((office, index) => (
+                <div key={index}>
+                  <div className="flex items-start mb-2">
+                    <MapPin className="mr-2 h-5 w-5 text-buniyaad-orange flex-shrink-0 mt-1" />
+                    <div>
+                      <p className="font-medium">{office.name}</p>
+                      <p className="text-sm text-gray-300">{office.address}</p>
+                    </div>
+                  </div>
+                  <GoogleMap address={office.fullAddress} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

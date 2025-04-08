@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ShoppingCart, ChevronDown } from "lucide-react";
+import { Menu, X, ShoppingCart, ChevronDown, Phone } from "lucide-react";
 import { Button } from "./ui/button";
 import { 
   DropdownMenu,
@@ -9,6 +9,29 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger
 } from "./ui/dropdown-menu";
+
+const productCategories = [
+  {
+    name: "River Sand",
+    slug: "river-sand",
+    image: "/lovable-uploads/ddd71869-2d18-42d9-af38-80b39177e1d0.png"
+  },
+  {
+    name: "Crushed Stone",
+    slug: "crushed-stone",
+    image: "/lovable-uploads/90c2fff1-681c-4683-b5b5-3bac5720ce8f.png"
+  },
+  {
+    name: "Bricks",
+    slug: "bricks",
+    image: "/lovable-uploads/8766d78b-d070-4a37-ba52-0be513132055.png"
+  },
+  {
+    name: "Cement",
+    slug: "cement",
+    image: "/lovable-uploads/3da5d896-6671-4343-a0dd-3d5e126f812b.png"
+  }
+];
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -43,19 +66,15 @@ const Header = () => {
                   Products <ChevronDown className="ml-1 h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-48">
-                <DropdownMenuItem asChild>
-                  <Link to="/products/river-sand" className="w-full">River Sand</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/products/crushed-stone" className="w-full">Crushed Stone</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/products/bricks" className="w-full">Bricks</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/products/cement" className="w-full">Cement</Link>
-                </DropdownMenuItem>
+              <DropdownMenuContent align="end" className="w-64 grid grid-cols-2 gap-2 p-2 bg-white">
+                {productCategories.map((category) => (
+                  <DropdownMenuItem key={category.slug} asChild className="p-2 hover:bg-buniyaad-orange/10">
+                    <Link to={`/products/${category.slug}`} className="w-full flex items-center">
+                      <img src={category.image} alt={category.name} className="w-8 h-8 object-cover rounded mr-2" />
+                      <span>{category.name}</span>
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
               </DropdownMenuContent>
             </DropdownMenu>
             <Link to="/about" className="text-buniyaad-dark hover:text-buniyaad-orange px-3 py-2 rounded-md text-sm font-medium transition-colors">
@@ -64,6 +83,10 @@ const Header = () => {
             <Link to="/contact" className="text-buniyaad-dark hover:text-buniyaad-orange px-3 py-2 rounded-md text-sm font-medium transition-colors">
               Contact
             </Link>
+            <a href="tel:+917651853974" className="text-buniyaad-dark hover:text-buniyaad-orange px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
+              <Phone className="h-4 w-4 mr-1" /> 
+              <span>7651853974</span>
+            </a>
           </nav>
 
           {/* User Actions */}
@@ -98,6 +121,11 @@ const Header = () => {
                 </span>
               </Button>
             </Link>
+            <a href="tel:+917651853974" className="mr-3">
+              <Button variant="ghost" size="icon">
+                <Phone className="h-5 w-5 text-buniyaad-dark" />
+              </Button>
+            </a>
             <button
               onClick={toggleMobileMenu}
               className="inline-flex items-center justify-center p-2 rounded-md text-buniyaad-dark hover:text-buniyaad-orange focus:outline-none"
@@ -130,35 +158,18 @@ const Header = () => {
               >
                 Products
               </button>
-              <div className="pl-4 space-y-1">
-                <Link
-                  to="/products/river-sand"
-                  className="block px-3 py-2 rounded-md text-sm text-buniyaad-dark hover:text-buniyaad-orange"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  River Sand
-                </Link>
-                <Link
-                  to="/products/crushed-stone"
-                  className="block px-3 py-2 rounded-md text-sm text-buniyaad-dark hover:text-buniyaad-orange"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Crushed Stone
-                </Link>
-                <Link
-                  to="/products/bricks"
-                  className="block px-3 py-2 rounded-md text-sm text-buniyaad-dark hover:text-buniyaad-orange"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Bricks
-                </Link>
-                <Link
-                  to="/products/cement"
-                  className="block px-3 py-2 rounded-md text-sm text-buniyaad-dark hover:text-buniyaad-orange"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Cement
-                </Link>
+              <div className="pl-4 grid grid-cols-2 gap-2">
+                {productCategories.map((category) => (
+                  <Link
+                    key={category.slug}
+                    to={`/products/${category.slug}`}
+                    className="flex items-center px-3 py-2 rounded-md text-sm text-buniyaad-dark hover:text-buniyaad-orange"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <img src={category.image} alt={category.name} className="w-6 h-6 object-cover rounded mr-2" />
+                    <span>{category.name}</span>
+                  </Link>
+                ))}
               </div>
             </div>
             <Link
