@@ -3,11 +3,6 @@ import { useState } from "react";
 
 const brands = [
   {
-    id: 1,
-    name: "UltraTech Cement",
-    logo: "/lovable-uploads/14f754b6-ca50-4cb3-94e7-5719e2a86fb1.png",
-  },
-  {
     id: 2,
     name: "ACC Cement",
     logo: "/lovable-uploads/490dd0b6-ff92-4973-bb45-c0230fc4bf99.png",
