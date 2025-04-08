@@ -13,6 +13,7 @@ const products = [
     unit: "per ton",
     image: "/lovable-uploads/ed20a8dc-5084-4e57-9cbf-049e86fdd3e6.png",
     slug: "river-sand",
+    category: "river-sand"
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ const products = [
     unit: "per ton",
     image: "/lovable-uploads/a44ed421-d363-427a-9758-1731bbc084b5.png",
     slug: "crushed-stone",
+    category: "crushed-stone"
   },
   {
     id: 3,
@@ -31,6 +33,7 @@ const products = [
     unit: "per piece",
     image: "/lovable-uploads/56ca1bd4-fccb-49ac-adec-74fd6e4dfe81.png",
     slug: "bricks",
+    category: "bricks"
   },
   {
     id: 4,
@@ -40,6 +43,7 @@ const products = [
     unit: "per bag",
     image: "/lovable-uploads/534cadea-5947-4337-8bd2-9cb75f3d5e23.png",
     slug: "cement",
+    category: "cement"
   },
 ];
 
@@ -55,7 +59,7 @@ const FeaturedProducts = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product) => (
             <Card key={product.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-              <Link to={`/products/${product.slug}`}>
+              <Link to={`/products/${product.category}`}>
                 <CardHeader className="p-0">
                   <div className="aspect-square overflow-hidden">
                     <img

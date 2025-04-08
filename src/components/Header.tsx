@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Menu, X, ShoppingCart, ChevronDown, Phone, MessageCircle } from "lucide-react";
 import { Button } from "./ui/button";
 import { 
@@ -35,9 +35,15 @@ const productCategories = [
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
   
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const handleProductClick = (slug: string) => {
+    navigate(`/products/${slug}`);
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -75,6 +81,11 @@ const Header = () => {
                     </Link>
                   </DropdownMenuItem>
                 ))}
+                <DropdownMenuItem asChild className="p-2 col-span-2 hover:bg-buniyaad-orange/10 mt-2 border-t pt-3">
+                  <Link to="/products" className="w-full flex items-center justify-center font-medium text-buniyaad-orange">
+                    View All Products
+                  </Link>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
             <Link to="/about" className="text-buniyaad-dark hover:text-buniyaad-orange px-3 py-2 rounded-md text-sm font-medium transition-colors">
@@ -170,6 +181,13 @@ const Header = () => {
                     <span>{category.name}</span>
                   </Link>
                 ))}
+                <Link
+                  to="/products"
+                  className="flex items-center col-span-2 px-3 py-2 rounded-md text-sm font-medium text-buniyaad-orange hover:bg-buniyaad-orange/10 mt-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  View All Products
+                </Link>
               </div>
             </div>
             <Link
