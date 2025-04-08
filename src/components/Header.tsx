@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ShoppingCart, ChevronDown, Phone } from "lucide-react";
+import { Menu, X, ShoppingCart, ChevronDown, Phone, MessageCircle } from "lucide-react";
 import { Button } from "./ui/button";
 import { 
   DropdownMenu,
@@ -14,22 +14,22 @@ const productCategories = [
   {
     name: "River Sand",
     slug: "river-sand",
-    image: "/lovable-uploads/ddd71869-2d18-42d9-af38-80b39177e1d0.png"
+    image: "/lovable-uploads/ed20a8dc-5084-4e57-9cbf-049e86fdd3e6.png"
   },
   {
     name: "Crushed Stone",
     slug: "crushed-stone",
-    image: "/lovable-uploads/90c2fff1-681c-4683-b5b5-3bac5720ce8f.png"
+    image: "/lovable-uploads/a44ed421-d363-427a-9758-1731bbc084b5.png"
   },
   {
     name: "Bricks",
     slug: "bricks",
-    image: "/lovable-uploads/8766d78b-d070-4a37-ba52-0be513132055.png"
+    image: "/lovable-uploads/56ca1bd4-fccb-49ac-adec-74fd6e4dfe81.png"
   },
   {
     name: "Cement",
     slug: "cement",
-    image: "/lovable-uploads/3da5d896-6671-4343-a0dd-3d5e126f812b.png"
+    image: "/lovable-uploads/534cadea-5947-4337-8bd2-9cb75f3d5e23.png"
   }
 ];
 

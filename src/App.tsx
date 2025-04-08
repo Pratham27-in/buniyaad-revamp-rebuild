@@ -11,6 +11,7 @@ import Quote from "./pages/Quote";
 import BecomeSeller from "./pages/BecomeSeller";
 import NotFound from "./pages/NotFound";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 import CallPopup from "./components/CallPopup";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/quote" element={<Quote />} />
           <Route path="/become-seller" element={<BecomeSeller />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

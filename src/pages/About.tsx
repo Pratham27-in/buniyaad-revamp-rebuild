@@ -2,7 +2,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DeliveryLocations from "@/components/DeliveryLocations";
-import { Truck, ShieldCheck, Clock, Award } from "lucide-react";
+import { Truck, ShieldCheck, Clock, Award, Target, Users } from "lucide-react";
 
 const About = () => {
   return (
@@ -58,6 +58,77 @@ const About = () => {
                     className="w-full h-auto"
                   />
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Vision */}
+        <section className="bg-buniyaad-orange/10 py-16">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col md:flex-row items-center gap-10">
+              <div className="md:w-1/2 order-2 md:order-1">
+                <div className="rounded-lg overflow-hidden shadow-lg">
+                  <img 
+                    src="/lovable-uploads/550b6ea5-b6c9-406e-bd91-f1e63f24e150.png" 
+                    alt="Future Vision" 
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+              <div className="md:w-1/2 order-1 md:order-2">
+                <div className="flex items-center mb-4">
+                  <Target className="h-8 w-8 text-buniyaad-orange mr-3" />
+                  <h2 className="text-3xl font-bold text-buniyaad-dark">Our Vision</h2>
+                </div>
+                <p className="text-gray-700 mb-4">
+                  At Buniyaad, our vision is to revolutionize the construction materials industry in Uttar Pradesh by providing unparalleled quality, transparency, and service.
+                </p>
+                <p className="text-gray-700 mb-4">
+                  We aim to be the most trusted supplier of construction materials in the region, known for our commitment to quality, fair pricing, and customer satisfaction.
+                </p>
+                <p className="text-gray-700">
+                  Through sustainable practices and innovation, we strive to contribute to the development of stronger, safer, and more beautiful infrastructure across Uttar Pradesh.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Co-founders */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-10">
+              <div className="flex items-center justify-center mb-4">
+                <Users className="h-8 w-8 text-buniyaad-orange mr-3" />
+                <h2 className="text-3xl font-bold text-buniyaad-dark">Our Leadership</h2>
+              </div>
+              <p className="text-gray-600 max-w-3xl mx-auto">
+                Meet the visionaries behind Buniyaad, who are passionate about transforming the construction materials landscape in Uttar Pradesh.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                <div className="w-32 h-32 mx-auto bg-buniyaad-orange/20 rounded-full flex items-center justify-center mb-4">
+                  <Users className="h-16 w-16 text-buniyaad-orange" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Pratham Singh</h3>
+                <p className="text-buniyaad-orange font-medium mb-3">Co-Founder</p>
+                <p className="text-gray-600">
+                  With a background in civil engineering and a passion for quality construction, Pratham leads our product sourcing and quality control initiatives.
+                </p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-md text-center">
+                <div className="w-32 h-32 mx-auto bg-buniyaad-orange/20 rounded-full flex items-center justify-center mb-4">
+                  <Users className="h-16 w-16 text-buniyaad-orange" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Aman Pratap Singh</h3>
+                <p className="text-buniyaad-orange font-medium mb-3">Co-Founder</p>
+                <p className="text-gray-600">
+                  Aman brings his expertise in business management and customer service, focusing on expanding our market reach and enhancing customer experiences.
+                </p>
               </div>
             </div>
           </div>

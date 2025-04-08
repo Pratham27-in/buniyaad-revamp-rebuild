@@ -12,7 +12,7 @@ const products = [
     originalPrice: 1500,
     unit: "per ton",
     discount: "10%",
-    image: "/lovable-uploads/ddd71869-2d18-42d9-af38-80b39177e1d0.png",
+    image: "/lovable-uploads/ed20a8dc-5084-4e57-9cbf-049e86fdd3e6.png",
     slug: "river-sand",
   },
   {
@@ -23,7 +23,7 @@ const products = [
     originalPrice: 1200,
     unit: "per ton",
     discount: "10%",
-    image: "/lovable-uploads/90c2fff1-681c-4683-b5b5-3bac5720ce8f.png",
+    image: "/lovable-uploads/a44ed421-d363-427a-9758-1731bbc084b5.png",
     slug: "crushed-stone",
   },
   {
@@ -34,7 +34,7 @@ const products = [
     originalPrice: 8,
     unit: "per piece",
     discount: "12.5%",
-    image: "/lovable-uploads/8766d78b-d070-4a37-ba52-0be513132055.png",
+    image: "/lovable-uploads/56ca1bd4-fccb-49ac-adec-74fd6e4dfe81.png",
     slug: "bricks",
   },
   {
@@ -45,7 +45,7 @@ const products = [
     originalPrice: 350,
     unit: "per bag",
     discount: "10%",
-    image: "/lovable-uploads/3da5d896-6671-4343-a0dd-3d5e126f812b.png",
+    image: "/lovable-uploads/534cadea-5947-4337-8bd2-9cb75f3d5e23.png",
     slug: "cement",
   },
 ];

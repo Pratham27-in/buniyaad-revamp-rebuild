@@ -10,6 +10,11 @@ const brands = [
   {
     id: 2,
     name: "ACC Cement",
+    logo: "/lovable-uploads/490dd0b6-ff92-4973-bb45-c0230fc4bf99.png",
+  },
+  {
+    id: 3,
+    name: "Ambuja Cement",
     logo: "/lovable-uploads/1a3f50c2-92e9-40bd-8da8-88470ce48178.png",
   },
 ];
