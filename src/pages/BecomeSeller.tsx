@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -24,6 +23,14 @@ const BecomeSeller = () => {
       setIsLoading(false);
       toast.success("Your seller application has been submitted successfully!");
     }, 1500);
+  };
+
+  const navigateToApplyTab = () => {
+    // Fix: Cast to HTMLElement to access click method
+    const applyTab = document.querySelector('button[value="apply"]') as HTMLElement;
+    if (applyTab) {
+      applyTab.click();
+    }
   };
 
   return (
@@ -72,7 +79,7 @@ const BecomeSeller = () => {
                         </div>
                         <div className="flex flex-col items-center p-4 bg-white rounded-lg shadow-sm">
                           <div className="w-12 h-12 rounded-full bg-buniyaad-orange/20 flex items-center justify-center mb-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-buniyaad-orange"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-buniyaad-orange"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg>
                           </div>
                           <h3 className="font-semibold text-lg mb-2">Competitive Pricing</h3>
                           <p className="text-gray-600 text-center">Set your own prices and compete in a transparent marketplace.</p>
@@ -88,7 +95,7 @@ const BecomeSeller = () => {
                       <div className="text-center mt-6">
                         <Button 
                           className="bg-buniyaad-orange hover:bg-buniyaad-orange/90 text-white"
-                          onClick={() => document.querySelector('button[value="apply"]')?.click()}
+                          onClick={navigateToApplyTab}
                         >
                           Apply Now
                         </Button>
@@ -142,7 +149,7 @@ const BecomeSeller = () => {
                       <div className="text-center mt-6">
                         <Button 
                           className="bg-buniyaad-orange hover:bg-buniyaad-orange/90 text-white"
-                          onClick={() => document.querySelector('button[value="apply"]')?.click()}
+                          onClick={navigateToApplyTab}
                         >
                           Apply Now
                         </Button>
